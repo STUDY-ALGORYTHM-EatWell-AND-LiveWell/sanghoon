@@ -70,4 +70,38 @@ public class 프로그래머스_3_표편집_이상훈 {
         }
         return answer.toString();
     }
+
+
+    // 처음 접근한 풀이(오답)
+    public String wrongSolution(int n, int k, String[] cmds) {
+        List<Integer> list = new ArrayList<>();
+        for(int i=0; i<n; i++)
+            list.add(i);
+
+        Stack<Integer> stack = new Stack<>();
+        int idx = k;
+        for(int i=0; i<cmds.length; i++) {
+            String cmd = cmds[i];
+            if (cmd.charAt(0) == 'U') {
+                idx -= Integer.valueOf(cmd.substring(2, cmd.length()));
+            }
+            else if (cmd.charAt(0) == 'D') {
+                idx += Integer.valueOf(cmd.substring(2, cmd.length()));
+            }
+            else if (cmd.charAt(0) == 'C') {
+                stack.push(list.get(idx));
+                list.remove(idx);
+                if (idx == list.size())
+                    idx--;
+            }
+            else {
+                // stack에서 pop()한 원소의 자리를 찾기 위해 list에서 이분탐색으로 접근 ...
+
+            }
+        }
+
+
+        //...
+        return "";
+    }
 }
