@@ -2,7 +2,7 @@ package week_7;
 
 import java.util.*;
 
-class Solution {
+class 프로그래머스_3_합승택시요금_이상훈 {
 
     public int solution(int n, int s, int a, int b, int[][] fares) {
         int[][] graph = new int[n][n];
